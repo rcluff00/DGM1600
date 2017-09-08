@@ -8,43 +8,61 @@ public class ZoltarScript : MonoBehaviour
 
     int max = 100;
     int min = 1;
-    int guess = 100 / HALF;
+    int guess;
+
+    public int counter;
 
 	// Use this for initialization
 	void Start ()
     {
-        print("Please allow me to introduce myself. My name is Zoltar, the mind reader.");
+        guess = Random.Range(min, max);
+
+        // Intro   
+        print("My name is Zoltar, the mind reader.");
         print("Please, in your mind's eye, pick a number from " + min + " and " + max + ".");
 
+        // Instructions
         print("Do tell, is your number higher or lower than " + guess + "?");
         print("(UP arrow for higher, DOWN arrow for lower, or ENTER for equals)");
 
         max++;
 	}
-	
-	// Update is called once per frame
-	void Update ()
+
+    // Update is called once per frame
+    void Update()
     {
-        // Higher
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (counter == -1)
+        {
+            if (Input.GetKeyDown(KeyCode.UpArrow) || (Input.GetKeyDown(KeyCode.DownArrow)))
+            {
+                print("The fog of unclarity still shrouds your number. You win!");
+            }
+        }
+        
+        else if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             min = guess;
-            guess = (max + min) / HALF;
-            print("Is the number higher or lower than " + guess + "?");
+            guess = (max + min) / 2;
+            counter--;
+            print("Is your number higher or lower than" + guess + "?");
         }
 
-        // Lower
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             max = guess;
-            guess = (max + min) / HALF;
-            print("Is the number higher or lower than " + guess + "?");
+            guess = (max + min) / 2;
+            counter--;
+            print("Is your number higher or lower than" + guess + "?");
         }
 
-        // Got it
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown (KeyCode.Return))
         {
-            print("Zoltar has uncovered your number from the mists of clairvoyance...Zoltar has determined your number to be " + guess + "!");
+            print("I have uncovered your number from the mists of clairvoyance. I win!");
+        }
+
+        if (counter == 0)
+        {
+            counter--;
         }
     }
 }
