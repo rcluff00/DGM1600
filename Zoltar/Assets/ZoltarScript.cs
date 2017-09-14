@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ZoltarScript : MonoBehaviour
 {
+    public Text textBox;
+
     const int HALF = 2;
 
     int max = 100;
@@ -17,13 +20,10 @@ public class ZoltarScript : MonoBehaviour
     {
         guess = Random.Range(min, max);
 
-        // Intro   
-        print("My name is Zoltar, the mind reader.");
-        print("Please, in your mind's eye, pick a number from " + min + " and " + max + ".");
-
-        // Instructions
-        print("Do tell, is your number higher or lower than " + guess + "?");
-        print("(UP arrow for higher, DOWN arrow for lower, or ENTER for equals)");
+        textBox.text = "My name is Zoltar, the mind reader."
+            + "\nPlease, in your mind's eye, envision a number from " + min + " and " + max + "."
+            + "\n\nDo tell, is your number higher or lower than " + guess + "?"
+            + "\n(UP arrow for higher, DOWN arrow for lower, or ENTER for equals)";
 
         max++;
 	}
@@ -35,7 +35,7 @@ public class ZoltarScript : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.UpArrow) || (Input.GetKeyDown(KeyCode.DownArrow)))
             {
-                print("The fog of unclarity still shrouds your number. You win!");
+                textBox.text = "The fog of unclarity still shrouds your number. You win!";
             }
         }
         
@@ -44,7 +44,7 @@ public class ZoltarScript : MonoBehaviour
             min = guess;
             guess = (max + min) / 2;
             counter--;
-            print("Is your number higher or lower than" + guess + "?");
+            textBox.text = "Is your number higher or lower than " + guess + "?";
         }
 
         else if (Input.GetKeyDown(KeyCode.DownArrow))
@@ -52,12 +52,12 @@ public class ZoltarScript : MonoBehaviour
             max = guess;
             guess = (max + min) / 2;
             counter--;
-            print("Is your number higher or lower than" + guess + "?");
+            textBox.text = "Is your number higher or lower than " + guess + "?";
         }
 
         if (Input.GetKeyDown (KeyCode.Return))
         {
-            print("I have uncovered your number from the mists of clairvoyance. I win!");
+            textBox.text = "I have uncovered your number from the mists of clairvoyance. I win!";
         }
 
         if (counter == 0)
