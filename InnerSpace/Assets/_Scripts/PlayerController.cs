@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour {
     public Transform shotPos;
     public float shotForce;
 
+    public ParticleSystem myParticles;
+
     // Use this for initialization
     void Start () {
 
@@ -24,6 +26,7 @@ public class PlayerController : MonoBehaviour {
         if (Input.GetKey(KeyCode.UpArrow))
         {
             GetComponent<Rigidbody2D>().AddForce(transform.up * thrustForce * Input.GetAxis("Vertical"));
+            myParticles.Emit(1);
         }
 
         // check for left
@@ -44,7 +47,10 @@ public class PlayerController : MonoBehaviour {
         {
             GameObject shot = Instantiate(projectile, shotPos.position, shotPos.rotation) as GameObject;
             shot.GetComponent<Rigidbody2D>().AddForce(shotPos.up * shotForce);
+            
         }
+
+       
 
     }
 }
