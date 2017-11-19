@@ -10,15 +10,14 @@ public class LevelManager : MonoBehaviour {
     void Start()
     {
         brickCount = FindObjectsOfType<Health>().Length;
-        
     }
 
-    public void LoadLevel (string name)
+    public void LoadLevel(string name)
     {
         SceneManager.LoadScene(name);
     }
 
-	public void QuitGame()
+    public void QuitGame()
     {
         Application.Quit();
     }
@@ -27,11 +26,11 @@ public class LevelManager : MonoBehaviour {
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
-    
+
     public void CheckBrickCount()
     {
         brickCount = FindObjectsOfType<Health>().Length;
-        if (brickCount <= 0)
+        if (brickCount <= 1)
         {
             LoadNextLevel();
         }

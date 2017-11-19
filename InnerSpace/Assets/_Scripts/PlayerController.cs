@@ -11,11 +11,11 @@ public class PlayerController : MonoBehaviour {
     public Transform shotPos;
     public float shotForce;
 
+
     public ParticleSystem myParticles;
 
     // Use this for initialization
     void Start () {
-
     }
 	
 
@@ -25,6 +25,9 @@ public class PlayerController : MonoBehaviour {
         // check for up
         if (Input.GetKey(KeyCode.UpArrow))
         {
+
+            //add torque?
+
             GetComponent<Rigidbody2D>().AddForce(transform.up * thrustForce * Input.GetAxis("Vertical"));
             myParticles.Emit(1);
         }
