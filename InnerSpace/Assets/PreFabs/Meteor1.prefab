@@ -9,20 +9,20 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1416602903683056}
+  m_RootGameObject: {fileID: 1217190590865052}
   m_IsPrefabParent: 1
---- !u!1 &1416602903683056
+--- !u!1 &1217190590865052
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4183193311304984}
-  - component: {fileID: 212455054134135522}
-  - component: {fileID: 50669883205900134}
-  - component: {fileID: 60388092382822036}
-  - component: {fileID: 114263190208698248}
+  - component: {fileID: 4736991413186304}
+  - component: {fileID: 212902705153437514}
+  - component: {fileID: 50702885315719688}
+  - component: {fileID: 60279163038343976}
+  - component: {fileID: 114065975970284268}
   m_Layer: 10
   m_Name: Meteor1
   m_TagString: Untagged
@@ -30,26 +30,26 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4183193311304984
+--- !u!4 &4736991413186304
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1416602903683056}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.088, y: -0.228, z: 5.53254}
+  m_GameObject: {fileID: 1217190590865052}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -43.347034, y: -254.38657, z: 0.8776288}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50669883205900134
+--- !u!50 &50702885315719688
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1416602903683056}
+  m_GameObject: {fileID: 1217190590865052}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -63,12 +63,12 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!60 &60388092382822036
+--- !u!60 &60279163038343976
 PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1416602903683056}
+  m_GameObject: {fileID: 1217190590865052}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -112,25 +112,26 @@ PolygonCollider2D:
       - {x: 0.1337676, y: 0.03284981}
       - {x: 0.1166757, y: 0.07094938}
       - {x: 0.09499999, y: 0.10178723}
---- !u!114 &114263190208698248
+--- !u!114 &114065975970284268
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1416602903683056}
+  m_GameObject: {fileID: 1217190590865052}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b60be65e762174e43b461a2b7d447b29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   InitialRotationSpeed: 0.5
-  health: 0
---- !u!212 &212455054134135522
+  explosionEffect: {fileID: 198443215033503342, guid: d26ee4c461553a24fb751053eccace1a,
+    type: 2}
+--- !u!212 &212902705153437514
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1416602903683056}
+  m_GameObject: {fileID: 1217190590865052}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0

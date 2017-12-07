@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+
+        print(GetComponent<Health>().GetHealth());
     }
 	
 
@@ -46,7 +48,7 @@ public class PlayerController : MonoBehaviour {
 
 
 
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             GameObject shot = Instantiate(projectile, shotPos.position, shotPos.rotation) as GameObject;
             shot.GetComponent<Rigidbody2D>().AddForce(shotPos.up * shotForce);

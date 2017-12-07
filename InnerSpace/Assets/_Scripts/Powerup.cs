@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Powerup : MonoBehaviour {
 
-    public enum Type {SpeedBoost, LaserSplay, Shield, west};
+    public enum Type {SpeedBoost, LaserSplay, Shield};
     public Type PowerupType;
     public Sprite[] images;
     
@@ -23,8 +23,6 @@ public class Powerup : MonoBehaviour {
                 break;
             case Type.Shield:
                 break;
-            case Type.west:
-                break;
             default:
                 break;
         }
@@ -41,8 +39,6 @@ public class Powerup : MonoBehaviour {
             case Type.LaserSplay:
                 break;
             case Type.Shield:
-                break;
-            case Type.west:
                 break;
             default:
                 break;
