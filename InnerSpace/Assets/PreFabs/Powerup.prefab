@@ -96,11 +96,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d04f9f9b861167b4489d049140bf7f97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PowerupType: 0
+  PowerupType: 2
   images:
   - {fileID: 21300000, guid: e413e02cebbc57240a645e037362385f, type: 3}
+  - {fileID: 21300000, guid: e413e02cebbc57240a645e037362385f, type: 3}
   - {fileID: 21300000, guid: 3626cd974733cea418bbee1de8cbf0fa, type: 3}
-  - {fileID: 21300000, guid: e2ecdcf454edcea4591191af394da672, type: 3}
 --- !u!212 &212618791650301704
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -134,7 +134,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: e413e02cebbc57240a645e037362385f, type: 3}
-  m_Color: {r: 0.96227187, g: 1, b: 0.31617647, a: 1}
+  m_Color: {r: 1, g: 1, b: 0.1544118, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

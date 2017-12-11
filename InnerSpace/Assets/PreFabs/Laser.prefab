@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d65353c344b3314d9d6ea8bd9af7eef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laserSpeed: 1
+  laserSpeed: 3
   lifetime: 1
 --- !u!212 &212489898330311764
 SpriteRenderer:

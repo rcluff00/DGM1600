@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114065975970284268}
   m_Layer: 10
   m_Name: Meteor1
-  m_TagString: Untagged
+  m_TagString: Meteor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126,6 +126,9 @@ MonoBehaviour:
   InitialRotationSpeed: 0.5
   explosionEffect: {fileID: 198443215033503342, guid: d26ee4c461553a24fb751053eccace1a,
     type: 2}
+  pointWorth: 1
+  meteorSpeed: 10
+  thePlayer: {fileID: 1371532184304746, guid: 1d41478bf31e54a44816cff9daa014eb, type: 2}
 --- !u!212 &212902705153437514
 SpriteRenderer:
   m_ObjectHideFlags: 1

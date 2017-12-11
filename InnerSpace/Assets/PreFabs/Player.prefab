@@ -37,13 +37,13 @@ GameObject:
   m_Component:
   - component: {fileID: 4720333920959942}
   - component: {fileID: 212032421731651374}
-  - component: {fileID: 114478036440562198}
   - component: {fileID: 60231383915408358}
   - component: {fileID: 50767041353418368}
   - component: {fileID: 114395857966004222}
+  - component: {fileID: 114202564807198878}
   m_Layer: 9
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -160,6 +160,23 @@ PolygonCollider2D:
       - {x: 0.10299666, y: 0.13068682}
       - {x: 0.084117904, y: 0.13094941}
       - {x: 0.04096252, y: 0.20068139}
+--- !u!114 &114202564807198878
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1371532184304746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14f6aa4100c8b384ab3c54b39bebc6df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 150
+  thrustForce: 6
+  projectile: {fileID: 1210904035231844, guid: d7d35a6a9604deb47a9dd70fcec76217, type: 2}
+  shotPos: {fileID: 4260454259572940}
+  shotForce: 500
+  myParticles: {fileID: 198515281349392492}
 --- !u!114 &114395857966004222
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -174,23 +191,6 @@ MonoBehaviour:
   health: 3
   explosionEffect: {fileID: 1053753124035600, guid: d26ee4c461553a24fb751053eccace1a,
     type: 2}
---- !u!114 &114478036440562198
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1371532184304746}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14f6aa4100c8b384ab3c54b39bebc6df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotationSpeed: 100
-  thrustForce: 3
-  projectile: {fileID: 1210904035231844, guid: d7d35a6a9604deb47a9dd70fcec76217, type: 2}
-  shotPos: {fileID: 4260454259572940}
-  shotForce: 1000
-  myParticles: {fileID: 198515281349392492}
 --- !u!198 &198515281349392492
 ParticleSystem:
   m_ObjectHideFlags: 1
