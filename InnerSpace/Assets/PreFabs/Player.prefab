@@ -191,6 +191,8 @@ MonoBehaviour:
   health: 3
   explosionEffect: {fileID: 1053753124035600, guid: d26ee4c461553a24fb751053eccace1a,
     type: 2}
+  scoreScript: {fileID: 114148643613981730, guid: aa7b41ed761bf644cb868206bcee52ba,
+    type: 2}
 --- !u!198 &198515281349392492
 ParticleSystem:
   m_ObjectHideFlags: 1

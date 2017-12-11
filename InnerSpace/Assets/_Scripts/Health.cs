@@ -7,16 +7,17 @@ public class Health : MonoBehaviour {
     public int health;
     public GameObject explosionEffect;
 
+    public Scoreboard scoreScript;
+
     public int GetHealth()
     {
         return health;
     }
 
-
-
     void OnCollisionEnter2D(Collision2D collider)
     {
         health--;
+        
     }
 
     // Update is called once per frame
@@ -26,9 +27,10 @@ public class Health : MonoBehaviour {
         {
             // Destroy ship
             Destroy(gameObject);
-
             // Make kersplosion
             Instantiate(explosionEffect, transform.position, Quaternion.identity);
+
+            scoreScript.DecrementLives();
         }
 	}
 }

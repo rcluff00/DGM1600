@@ -18,10 +18,12 @@ public class Scoreboard : MonoBehaviour {
     public Text livesText;
     public Text hiscoreText;
 
+    public Health healthScript;
 
     void Start () {
-        hiscore = PlayerPrefs.GetInt ("hiscore", 0);
 
+        hiscore = PlayerPrefs.GetInt ("hiscore", 0);
+        lives = healthScript.GetHealth();
         score = 0;
 
         scoreText.text = "SCORE:" + score;
@@ -65,19 +67,26 @@ public class Scoreboard : MonoBehaviour {
     public void IncrementScoreboard(int value)
     {
         score += value;
+        scoreText.text = "SCORE: " + score;
 
         if (score > hiscore)
-        {
-            PlayerPrefs.SetInt("hiscore", score);
-        }
 
+        {
+            hiscore = score;
+            hiscoreText.text = "HISCORE: " + score;
+            PlayerPrefs.SetInt("hiscore", score);  
+        }
     }
 
-	// Update is called once per frame
 	void SaveScore() {
-        PlayerPrefs.SetInt("HighScore", score);
-		
+        PlayerPrefs.SetInt("HighScore", score);	
 	}
+
+    public void DecrementLives()
+    {
+        lives = healthScript.GetHealth();
+        livesText.text = "LIVES: " + lives;
+    }
 
     public int GetScore()
     {

@@ -11,12 +11,11 @@ public class Meteor : MonoBehaviour {
 
     public int meteorSpeed;
     public GameObject thePlayer;
+    public Scoreboard scoreScript;
 
     void Start () {
-
         // Start Meteors out spinning a lil bit
         GetComponent<Rigidbody2D>().AddTorque(Random.Range(-InitialRotationSpeed, InitialRotationSpeed), ForceMode2D.Impulse);
-        //GetComponent<Rigidbody2D>().AddForce(transform.up * Random.Range(-50.0f, 150.0f));
 
         launchMeteor();
     }
@@ -49,7 +48,9 @@ public class Meteor : MonoBehaviour {
                 Destroy(collider.gameObject);
 
                 // Increase score
-                GetComponent<Scoreboard>().IncrementScoreboard(pointWorth);
+                scoreScript.IncrementScoreboard(pointWorth);
+
+                print("you scored yerself a point");
             }
         }
             

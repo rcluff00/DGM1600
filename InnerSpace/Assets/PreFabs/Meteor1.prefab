@@ -129,6 +129,8 @@ MonoBehaviour:
   pointWorth: 1
   meteorSpeed: 10
   thePlayer: {fileID: 1371532184304746, guid: 1d41478bf31e54a44816cff9daa014eb, type: 2}
+  scoreScript: {fileID: 114148643613981730, guid: aa7b41ed761bf644cb868206bcee52ba,
+    type: 2}
 --- !u!212 &212902705153437514
 SpriteRenderer:
   m_ObjectHideFlags: 1
