@@ -24,38 +24,27 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        // check for up
+        // Rotate the ship if necessary
+        transform.Rotate(0, 0, -Input.GetAxis("Horizontal")*
+            rotationSpeed * Time.deltaTime);
+ 
+        // Thrust the ship if necessary
+        GetComponent<Rigidbody2D>().
+            AddForce(transform.up * thrustForce *
+                Input.GetAxis("Vertical"));
+
         if (Input.GetKey(KeyCode.UpArrow))
         {
-
-            //add torque?
-
-            GetComponent<Rigidbody2D>().AddForce(transform.up * thrustForce * Input.GetAxis("Vertical"));
             myParticles.Emit(1);
         }
-
-        // check for left
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            transform.Rotate(0, 0, -Input.GetAxis("Horizontal") * rotationSpeed * Time.deltaTime);
-        }
-
-        // check for right
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            transform.Rotate(0, 0, -Input.GetAxis("Horizontal") * rotationSpeed * Time.deltaTime);
-        }
-
-
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
             GameObject shot = Instantiate(projectile, shotPos.position, shotPos.rotation) as GameObject;
             shot.GetComponent<Rigidbody2D>().AddForce(shotPos.up * shotForce);
-            
         }
 
-       
 
-    }
+
+        }
 }

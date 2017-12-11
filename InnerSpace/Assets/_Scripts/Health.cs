@@ -6,7 +6,6 @@ public class Health : MonoBehaviour {
 
     public int health;
     public GameObject explosionEffect;
-    public GameObject[] lives;
 
     public int GetHealth()
     {
@@ -14,13 +13,6 @@ public class Health : MonoBehaviour {
     }
 
 
-    void Start()
-    {
-        for (int i = 0; i < health; i++)
-        {
-            lives[i].SetActive(true);
-        }
-    }
 
     void OnCollisionEnter2D(Collision2D collider)
     {
@@ -30,11 +22,12 @@ public class Health : MonoBehaviour {
     // Update is called once per frame
     void Update () {
 
-        
-
         if (health <= 0)
         {
+            // Destroy ship
             Destroy(gameObject);
+
+            // Make kersplosion
             Instantiate(explosionEffect, transform.position, Quaternion.identity);
         }
 	}

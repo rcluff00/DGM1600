@@ -20,8 +20,10 @@ public class Powerup : MonoBehaviour {
                 gameObject.GetComponent<SpriteRenderer>().sprite = images[0];
                 break;
             case Type.LaserSplay:
+                GetComponent<SpriteRenderer>().sprite = images[1];
                 break;
             case Type.Shield:
+                GetComponent<SpriteRenderer>().sprite = images[2];
                 break;
             default:
                 break;
@@ -29,16 +31,17 @@ public class Powerup : MonoBehaviour {
     }
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("We hit a powerup");
-
         switch (PowerupType)
         {
             case Type.SpeedBoost:
                 other.GetComponent<PlayerController>().thrustForce *= 2;
+                other.GetComponent<PlayerController>().rotationSpeed *= 2;
                 break;
             case Type.LaserSplay:
+                other.GetComponent<Laser>().laserSpeed *= 2;
                 break;
             case Type.Shield:
+                other.GetComponent<Health>().health++;
                 break;
             default:
                 break;
