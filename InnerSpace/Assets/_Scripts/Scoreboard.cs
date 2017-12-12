@@ -18,12 +18,12 @@ public class Scoreboard : MonoBehaviour {
     public Text livesText;
     public Text hiscoreText;
 
-    public Health healthScript;
+    public GameObject healthScript;
+    
 
     void Start () {
-
         hiscore = PlayerPrefs.GetInt ("hiscore", 0);
-        lives = healthScript.GetHealth();
+        lives = healthScript.GetComponent<Health>().health;
         score = 0;
 
         scoreText.text = "SCORE:" + score;
@@ -37,7 +37,7 @@ public class Scoreboard : MonoBehaviour {
         InvokeRepeating("SpawnMeteorTop", 2.0f, spawnRate);
 
         //Spawn Powerups
-        InvokeRepeating("SpawnPowerup", 8.0f, powerupSpawnRate);
+        InvokeRepeating("SpawnPowerup", 1.0f, powerupSpawnRate);
     }
 
     // Spawn meteors randomly
@@ -61,16 +61,15 @@ public class Scoreboard : MonoBehaviour {
     // Spawn powrups randomly
     void SpawnPowerup()
     {
-        Instantiate(spawnedPowerup, new Vector3(Random.Range(-5.5f, 5.5f), Random.Range(-5.5f, 5.5f), 0), Quaternion.identity);
+        Instantiate(spawnedPowerup, new Vector3(Random.Range(-5f, 5f), Random.Range(-5f, 5f), 0), Quaternion.identity);
     }
 
-    public void IncrementScoreboard(int value)
+    public void IncrementScoreboard(int pointValue)
     {
-        score += value;
+        score += pointValue;
         scoreText.text = "SCORE: " + score;
 
         if (score > hiscore)
-
         {
             hiscore = score;
             hiscoreText.text = "HISCORE: " + score;
@@ -78,23 +77,10 @@ public class Scoreboard : MonoBehaviour {
         }
     }
 
-	void SaveScore() {
-        PlayerPrefs.SetInt("HighScore", score);	
-	}
-
-    public void DecrementLives()
+    public void AdjustLives()
     {
-        lives = healthScript.GetHealth();
+        lives = healthScript.GetComponent<Health>().health;
         livesText.text = "LIVES: " + lives;
     }
 
-    public int GetScore()
-    {
-        return PlayerPrefs.GetInt("HighScore");
-    }
-
-    public void OnDisable()
-    {
-        SaveScore();
-    }
 }

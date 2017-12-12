@@ -6,6 +6,7 @@ public class Meteor : MonoBehaviour {
 
     public float InitialRotationSpeed;
     public ParticleSystem explosionEffect;
+    public AudioClip meteorKersplode;
 
     public int pointWorth = 1;
 
@@ -14,6 +15,8 @@ public class Meteor : MonoBehaviour {
     public Scoreboard scoreScript;
 
     void Start () {
+        scoreScript = FindObjectOfType<Scoreboard>();
+
         // Start Meteors out spinning a lil bit
         GetComponent<Rigidbody2D>().AddTorque(Random.Range(-InitialRotationSpeed, InitialRotationSpeed), ForceMode2D.Impulse);
 
@@ -40,6 +43,8 @@ public class Meteor : MonoBehaviour {
 
             // Make kersplosion
             Instantiate(explosionEffect, transform.position, Quaternion.identity);
+            // Play kersplosion sound
+            AudioSource.PlayClipAtPoint(meteorKersplode, Camera.main.transform.position);
 
             // if it collides with a laser
             if (collider.gameObject.tag == "Laser")
@@ -48,9 +53,7 @@ public class Meteor : MonoBehaviour {
                 Destroy(collider.gameObject);
 
                 // Increase score
-                scoreScript.IncrementScoreboard(pointWorth);
-
-                print("you scored yerself a point");
+                scoreScript.GetComponent<Scoreboard>().IncrementScoreboard(pointWorth);
             }
         }
             

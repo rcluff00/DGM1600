@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: dcc70eee8f97daa458fc53b84e411caf
+timeCreated: 1511048825
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Goma Block
+  fontNames:
+  - Goma Block
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -173,6 +173,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 150
   thrustForce: 6
+  shipPewPew: {fileID: 8300000, guid: 1d73e13b0e26fa04194f5ccac52a8d3e, type: 3}
   projectile: {fileID: 1210904035231844, guid: d7d35a6a9604deb47a9dd70fcec76217, type: 2}
   shotPos: {fileID: 4260454259572940}
   shotForce: 500
@@ -191,7 +192,8 @@ MonoBehaviour:
   health: 3
   explosionEffect: {fileID: 1053753124035600, guid: d26ee4c461553a24fb751053eccace1a,
     type: 2}
-  scoreScript: {fileID: 114148643613981730, guid: aa7b41ed761bf644cb868206bcee52ba,
+  shipKersplode: {fileID: 8300000, guid: cae6ce02ce2da8845a9f48654eaea0b9, type: 3}
+  scoreScript: {fileID: 1315102421539198, guid: aa7b41ed761bf644cb868206bcee52ba,
     type: 2}
 --- !u!198 &198515281349392492
 ParticleSystem:

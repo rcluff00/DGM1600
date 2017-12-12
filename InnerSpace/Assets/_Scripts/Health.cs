@@ -5,19 +5,37 @@ using UnityEngine;
 public class Health : MonoBehaviour {
 
     public int health;
-    public GameObject explosionEffect;
 
-    public Scoreboard scoreScript;
+    public GameObject explosionEffect;
+    public AudioClip shipKersplode;
+
+    public GameObject scoreScript;
+    public LevelManager myLevelManager;
+
+
 
     public int GetHealth()
     {
         return health;
     }
 
-    void OnCollisionEnter2D(Collision2D collider)
+    public void DecrementHealth()
     {
         health--;
+        scoreScript.GetComponent<Scoreboard>().AdjustLives();
+    }
+
+    public void IncrementHealth()
+    {
+        health++;
+        scoreScript.GetComponent<Scoreboard>().AdjustLives();
+    }
         
+    // If ship collides with anything, decrement health
+    void OnCollisionEnter2D(Collision2D collider)
+    {
+        GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
+        DecrementHealth();
     }
 
     // Update is called once per frame
@@ -30,7 +48,10 @@ public class Health : MonoBehaviour {
             // Make kersplosion
             Instantiate(explosionEffect, transform.position, Quaternion.identity);
 
-            scoreScript.DecrementLives();
+            // Play kersplosion sound
+            AudioSource.PlayClipAtPoint(shipKersplode, Camera.main.transform.position);
+
+           myLevelManager.LoadLevel("GameOver");
         }
 	}
 }

@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
-     public float rotationSpeed;
+    public float rotationSpeed;
     public float thrustForce;
+
+    public AudioClip shipPewPew;
 
     public GameObject projectile;
     public Transform shotPos;
@@ -40,8 +42,13 @@ public class PlayerController : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            // Spawn laser
             GameObject shot = Instantiate(projectile, shotPos.position, shotPos.rotation) as GameObject;
+            // Launch laser
             shot.GetComponent<Rigidbody2D>().AddForce(shotPos.up * shotForce);
+
+            // Play pewpew sound
+            AudioSource.PlayClipAtPoint(shipPewPew, Camera.main.transform.position);
         }
 
 

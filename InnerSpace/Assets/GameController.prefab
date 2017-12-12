@@ -57,14 +57,11 @@ MonoBehaviour:
     type: 2}
   spawnRate: 6
   powerupSpawnRate: 10
-  score: 1
-  hiscore: 1
-  lives: 0
-  scoreText: {fileID: 114276693168942186, guid: 8e40ca75a13bd504899611c9fefbebff,
-    type: 2}
-  livesText: {fileID: 114512654645514468, guid: 77cdd24eab069fb49b742139846844d4,
-    type: 2}
-  hiscoreText: {fileID: 114670584237589496, guid: 25a18015e54c1c543af6f663a503511e,
-    type: 2}
-  healthScript: {fileID: 114395857966004222, guid: 1d41478bf31e54a44816cff9daa014eb,
+  score: 0
+  hiscore: 10
+  lives: 3
+  scoreText: {fileID: 0}
+  livesText: {fileID: 0}
+  hiscoreText: {fileID: 0}
+  healthScript: {fileID: 1371532184304746, guid: 1d41478bf31e54a44816cff9daa014eb,
     type: 2}

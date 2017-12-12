@@ -8,11 +8,17 @@ public class Powerup : MonoBehaviour {
     public Type PowerupType;
     public Sprite[] images;
 
+    public Health healthScript;
+
+    public int powerupLifetime;
     private int powerupRandom;
 
 	// Use this for initialization
 	void Start () {
 
+        Destroy(gameObject, powerupLifetime);
+
+        healthScript = FindObjectOfType<Health>();
         powerupRandom = Random.Range(0, 3);
 
         switch (powerupRandom)
@@ -63,7 +69,7 @@ public class Powerup : MonoBehaviour {
                     other.GetComponent<PlayerController>().rotationSpeed /= 2;
                     break;
                 case Type.Shield:
-                    other.GetComponent<Health>().health++;
+                    healthScript.GetComponent<Health>().IncrementHealth();
                     break;
                 default:
                     break;
