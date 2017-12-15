@@ -1,0 +1,11 @@
+Variables are used in coding to hold information that can be changed by the code.
+Different kinds of variables hold different kinds of information.
+When you create a variable, it will always have a type, and you can either assign a value to it right away, or later in the code.
+
+"int" variables hold integers, or whole numbers
+"bool" variables hold boolean values, either true or false
+"char" variables hold character values, such as "a" or "h"
+"string" variables hold strings of characters, such as "scripting" or "the last jedi"
+"float" variavles hold decimal numbers, such as "5.6" or "2.1"
+
+Every piece of substantial code implements the use of variables.
